@@ -16,28 +16,29 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
+<div id="ps_checkout_paypal_container">
+    <link rel="preload" href="{$paypalSdkLink|escape:'htmlall':'UTF-8'}" as="script">
 
-<link rel="preload" href="{$paypalSdkLink|escape:'htmlall':'UTF-8'}" as="script">
+    <div class="paypal-tips">{l s='You will be redirected to the related gateway to complete payment' mod='ps_checkout'}</div>
 
-<div class="paypal-tips">{l s='You will be redirected to the related gateway to complete payment' mod='ps_checkout'}</div>
+    <div>
+      <div id="paypal-button-container"></div>
 
-<div>
-  <div id="paypal-button-container"></div>
+      <form id="conditions-to-approve-paypal" method="GET">
+        <label for="conditions_to_approve">
+          <input id="conditions_to_approve" type="checkbox" name="conditions_to_approve" class="buttons-approve">
+          {l s='I agree to the [1]terms of service[/1] and will adhere to them unconditionally.' mod='ps_checkout' tags=["<a href=\"$termsAndConditionsLink\" id=\"cta-terms-and-conditions-checkout\">"]}
+        </label>
+      </form>
+    </div>
 
-  <form id="conditions-to-approve-paypal" method="GET">
-    <label for="conditions_to_approve">
-      <input id="conditions_to_approve" type="checkbox" name="conditions_to_approve" class="buttons-approve">
-      {l s='I agree to the [1]terms of service[/1] and will adhere to them unconditionally.' mod='ps_checkout' tags=["<a href=\"$termsAndConditionsLink\" id=\"cta-terms-and-conditions-checkout\">"]}
-    </label>
-  </form>
-</div>
-
-<div id="paypal-approve-error" class="hide-paypal-error">
-  <article class="alert alert-danger" role="alert" data-alert="danger">
-    <ul>
-      <li>{l s='Please indicate that you have read Terms & Conditions and accept all terms.' mod='ps_checkout'}</li>
-    </ul>
-  </article>
+    <div id="paypal-approve-error" class="hide-paypal-error">
+      <article class="alert alert-danger" role="alert" data-alert="danger">
+        <ul>
+          <li>{l s='Please indicate that you have read Terms & Conditions and accept all terms.' mod='ps_checkout'}</li>
+        </ul>
+      </article>
+    </div>
 </div>
 
 <script type='text/javascript' src='{$jsPathInitPaypalSdk|escape:'javascript':'UTF-8'}'></script>
