@@ -17,9 +17,9 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<script type='text/javascript' src='{$jsExpressCheckoutPath|escape:'javascript':'UTF-8'}'></script>
+<script type="text/javascript" src="{$jsExpressCheckoutPath|escape:'javascript':'UTF-8'|replace:'&amp;':'&'}"></script>
 
-<link rel="preload" href="{$paypalSdkLink|escape:'javascript':'UTF-8'}" as="script">
+<link rel="preload" href="{$paypalSdkLink|escape:'javascript':'UTF-8'|replace:'&amp;':'&'}" as="script">
 
 <div id="pscheckout-express-checkout" style="display:none;">
   {if $displayMode eq 'cart'}
@@ -32,52 +32,54 @@
   </div>
   {/if}
 
-  <div id="paypal-button-container" class="" style="max-width:300px;"></div>
+  <div id="paypal-button-container"></div>
 </div>
 
 <style>
-#pscheckout-express-checkout .cart {
-  margin-top:15px;
-  margin-bottom:15px
-}
-#pscheckout-express-checkout .checkout {
-  margin-top:15px;
-  margin-bottom:15px
-}
+  #pscheckout-express-checkout .cart {
+    margin-top:15px;
+    margin-bottom:15px
+  }
+  #pscheckout-express-checkout .checkout {
+    margin-top:15px;
+    margin-bottom:15px
+  }
+  #paypal-button-container {
+    max-width:300px;
+  }
+  .page-cart #paypal-button-container {
+    margin: auto;
+  }
 </style>
 
 <script>
-/**
- * Load paypal script
- */
-function loadPaypalScript() {
-  if (typeof paypalSdkPsCheckout !== 'undefined') {
-    return;
+  const checkoutLink = "{$checkoutLink|escape:'javascript':'UTF-8'|replace:'&amp;':'&' nofilter}";
+  const displayMode = "{$displayMode|escape:'javascript':'UTF-8'}";
+  const isPs176 = "{$isPs176|escape:'javascript':'UTF-8'}";
+  const expressCheckoutController = "{$expressCheckoutController|escape:'javascript':'UTF-8'|replace:'&amp;':'&' nofilter}";
+  const paypalIsActive = "{$paypalIsActive|escape:'javascript':'UTF-8'}";
+  /**
+   * Load paypal script
+   */
+  function loadPaypalScript() {
+    if (typeof paypalSdkPsCheckout !== 'undefined') {
+      return;
+    }
+
+    let psCheckoutScript = document.getElementById('psCheckoutPaypalSdk');
+
+    if (null !== psCheckoutScript) {
+      return;
+    }
+
+    const paypalScript = document.createElement('script');
+    paypalScript.setAttribute('src', "{$paypalSdkLink|escape:'javascript':'UTF-8'|replace:'&amp;':'&' nofilter}");
+    paypalScript.setAttribute('id', 'psCheckoutPaypalSdk');
+    paypalScript.setAttribute('data-namespace', 'paypalSdkPsCheckoutEC');
+    paypalScript.setAttribute('data-enable-3ds', '');
+    paypalScript.setAttribute('async', '');
+    document.head.appendChild(paypalScript);
   }
 
-  let psCheckoutScript = document.getElementById('psCheckoutPaypalSdk');
-
-  if (psCheckoutScript !== null) {
-    return;
-  }
-
-  const paypalScript = document.createElement('script');
-  paypalScript.setAttribute('src', "{$paypalSdkLink nofilter}");
-  paypalScript.setAttribute('id', 'psCheckoutPaypalSdk');
-  paypalScript.setAttribute('data-namespace', 'paypalSdkPsCheckoutEC');
-  paypalScript.setAttribute('async', '');
-  document.head.appendChild(paypalScript);
-}
-
-loadPaypalScript();
+  loadPaypalScript();
 </script>
-
-{literal}
-<script type="text/javascript">
-  var checkoutLink = "{/literal}{$checkoutLink|escape:'javascript':'UTF-8'}{literal}";
-  var displayMode = "{/literal}{$displayMode|escape:'javascript':'UTF-8'}{literal}";
-  var isPs176 = "{/literal}{$isPs176|escape:'javascript':'UTF-8'}{literal}";
-  var expressCheckoutController = "{/literal}{$expressCheckoutController|escape:'javascript':'UTF-8'}{literal}";
-  var paypalIsActive = "{/literal}{$paypalIsActive|escape:'javascript':'UTF-8'}{literal}";
-</script>
-{/literal}

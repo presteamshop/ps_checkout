@@ -200,26 +200,30 @@ class GenericClient
 
     private function handleException(\Ps_checkout $module, \Exception $exception, $options = [])
     {
-        $body = $exception->getMessage();
+        $body = null;
         $httpCode = 500;
         $hasResponse = method_exists($exception, 'hasResponse') ? $exception->hasResponse() : false;
 
-        if (method_exists($exception, 'getResponse')) {
+        if (true === $hasResponse && method_exists($exception, 'getResponse')) {
             $body = $exception->getResponse()->getBody();
             $httpCode = $exception->getResponse()->getStatusCode();
         }
 
         $module->getLogger()->error('route ' . $this->getRoute());
         $module->getLogger()->error('options ' . var_export($options, true));
+
         if ($hasResponse) {
             $module->getLogger()->error('body ' . $body);
         }
+
         $module->getLogger()->error('exception ' . $exception->getMessage());
 
         return [
             'status' => false,
             'httpCode' => $httpCode,
             'body' => $body,
+            'exceptionCode' => $exception->getCode(),
+            'exceptionMessage' => $exception->getMessage(),
         ];
     }
 }

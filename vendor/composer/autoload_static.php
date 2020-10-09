@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc564fad46ed7de99d74bc9a1ec3f9246
+class ComposerStaticInita2c26f6dd3e2807922d586c5ee87e86e
 {
     public static $files = array (
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
@@ -366,18 +366,20 @@ class ComposerStaticInitc564fad46ed7de99d74bc9a1ec3f9246
         'PrestaShop\\Module\\PrestashopCheckout\\Environment\\PaypalEnv' => __DIR__ . '/../..' . '/classes/Environment/PaypalEnv.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Environment\\PsxEnv' => __DIR__ . '/../..' . '/classes/Environment/PsxEnv.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Environment\\SsoEnv' => __DIR__ . '/../..' . '/classes/Environment/SsoEnv.php',
+        'PrestaShop\\Module\\PrestashopCheckout\\Exception\\PayPalException' => __DIR__ . '/../..' . '/classes/Exception/PayPalException.php',
+        'PrestaShop\\Module\\PrestashopCheckout\\Exception\\PsCheckoutException' => __DIR__ . '/../..' . '/classes/Exception/PsCheckoutException.php',
         'PrestaShop\\Module\\PrestashopCheckout\\ExpressCheckout' => __DIR__ . '/../..' . '/classes/ExpressCheckout.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Factory\\CheckoutLogger' => __DIR__ . '/../..' . '/classes/Factory/CheckoutLogger.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Faq\\Faq' => __DIR__ . '/../..' . '/classes/Faq/Faq.php',
-        'PrestaShop\\Module\\PrestashopCheckout\\FatalException' => __DIR__ . '/../..' . '/classes/exception/fatalException.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Handler\\CreatePaypalOrderHandler' => __DIR__ . '/../..' . '/classes/Handler/CreatePaypalOrderHandler.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Handler\\Response\\ResponseApiHandler' => __DIR__ . '/../..' . '/classes/Handler/Response/ResponseApiHandler.php',
         'PrestaShop\\Module\\PrestashopCheckout\\HostedFieldsErrors' => __DIR__ . '/../..' . '/classes/HostedFieldsErrors.php',
         'PrestaShop\\Module\\PrestashopCheckout\\MerchantDispatcher' => __DIR__ . '/../..' . '/classes/webHookDispatcher/MerchantDispatcher.php',
         'PrestaShop\\Module\\PrestashopCheckout\\MultiStoreFixer' => __DIR__ . '/../..' . '/classes/MultiStoreFixer.php',
-        'PrestaShop\\Module\\PrestashopCheckout\\NotAcceptableException' => __DIR__ . '/../..' . '/classes/exception/notAcceptableException.php',
         'PrestaShop\\Module\\PrestashopCheckout\\OrderDispatcher' => __DIR__ . '/../..' . '/classes/webHookDispatcher/OrderDispatcher.php',
         'PrestaShop\\Module\\PrestashopCheckout\\OrderStates' => __DIR__ . '/../..' . '/classes/OrderStates.php',
+        'PrestaShop\\Module\\PrestashopCheckout\\PayPalError' => __DIR__ . '/../..' . '/classes/PayPalError.php',
+        'PrestaShop\\Module\\PrestashopCheckout\\PayPalProcessorResponse' => __DIR__ . '/../..' . '/classes/PayPalProcessorResponse.php',
         'PrestaShop\\Module\\PrestashopCheckout\\PaypalCountryCodeMatrice' => __DIR__ . '/../..' . '/classes/PaypalCountryCodeMatrice.php',
         'PrestaShop\\Module\\PrestashopCheckout\\PaypalOrder' => __DIR__ . '/../..' . '/classes/PaypalOrder.php',
         'PrestaShop\\Module\\PrestashopCheckout\\PersistentConfiguration' => __DIR__ . '/../..' . '/classes/PersistentConfiguration.php',
@@ -393,7 +395,6 @@ class ComposerStaticInitc564fad46ed7de99d74bc9a1ec3f9246
         'PrestaShop\\Module\\PrestashopCheckout\\Presenter\\Store\\Modules\\PsxModule' => __DIR__ . '/../..' . '/classes/Presenter/Store/Modules/PsxModule.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Presenter\\Store\\StorePresenter' => __DIR__ . '/../..' . '/classes/Presenter/Store/StorePresenter.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Presenter\\Transaction\\TransactionPresenter' => __DIR__ . '/../..' . '/classes/Presenter/Transaction/TransactionPresenter.php',
-        'PrestaShop\\Module\\PrestashopCheckout\\PsCheckoutException' => __DIR__ . '/../..' . '/classes/exception/PsCheckoutException.php',
         'PrestaShop\\Module\\PrestashopCheckout\\PsxDataMatrice\\PsxDataMatrice' => __DIR__ . '/../..' . '/classes/PsxData/PsxDataMatrice.php',
         'PrestaShop\\Module\\PrestashopCheckout\\PsxData\\PsxDataPrepare' => __DIR__ . '/../..' . '/classes/PsxData/PsxDataPrepare.php',
         'PrestaShop\\Module\\PrestashopCheckout\\PsxData\\PsxDataValidation' => __DIR__ . '/../..' . '/classes/PsxData/PsxDataValidation.php',
@@ -405,11 +406,8 @@ class ComposerStaticInitc564fad46ed7de99d74bc9a1ec3f9246
         'PrestaShop\\Module\\PrestashopCheckout\\Translations\\LinksTranslations' => __DIR__ . '/../..' . '/classes/Translations/LinksTranslations.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Translations\\OrderStatesTranslations' => __DIR__ . '/../..' . '/classes/Translations/OrderStatesTranslations.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Translations\\Translations' => __DIR__ . '/../..' . '/classes/Translations/Translations.php',
-        'PrestaShop\\Module\\PrestashopCheckout\\UnauthorizedException' => __DIR__ . '/../..' . '/classes/exception/unauthorizedException.php',
-        'PrestaShop\\Module\\PrestashopCheckout\\UnprocessableException' => __DIR__ . '/../..' . '/classes/exception/unprocessableException.php',
         'PrestaShop\\Module\\PrestashopCheckout\\Updater\\PaypalAccountUpdater' => __DIR__ . '/../..' . '/classes/Updater/PaypalAccountUpdater.php',
         'PrestaShop\\Module\\PrestashopCheckout\\ValidateOrder' => __DIR__ . '/../..' . '/classes/ValidateOrder.php',
-        'PrestaShop\\Module\\PrestashopCheckout\\WebHookNock' => __DIR__ . '/../..' . '/classes/WebHookNock.php',
         'PrestaShop\\Module\\PrestashopCheckout\\WebHookOrder' => __DIR__ . '/../..' . '/classes/WebHookOrder.php',
         'PrestaShop\\Module\\PrestashopCheckout\\WebHookValidation' => __DIR__ . '/../..' . '/classes/webHookValidation/WebHookValidation.php',
         'Ps_checkout' => __DIR__ . '/../..' . '/ps_checkout.php',
@@ -493,10 +491,10 @@ class ComposerStaticInitc564fad46ed7de99d74bc9a1ec3f9246
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc564fad46ed7de99d74bc9a1ec3f9246::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc564fad46ed7de99d74bc9a1ec3f9246::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc564fad46ed7de99d74bc9a1ec3f9246::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc564fad46ed7de99d74bc9a1ec3f9246::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita2c26f6dd3e2807922d586c5ee87e86e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita2c26f6dd3e2807922d586c5ee87e86e::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita2c26f6dd3e2807922d586c5ee87e86e::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInita2c26f6dd3e2807922d586c5ee87e86e::$classMap;
 
         }, null, ClassLoader::class);
     }

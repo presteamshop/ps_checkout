@@ -18,51 +18,42 @@
  * International Registered Trademark & Property of PrestaShop SA
  */
 
-namespace PrestaShop\Module\PrestashopCheckout;
+namespace PrestaShop\Module\PrestashopCheckout\Exception;
 
 class PsCheckoutException extends \PrestaShopExceptionCore
 {
-    /**
-     * Set the HTTP code returned
-     *
-     * @var int
-     */
-    const HTTP_CODE = 400;
-
-    /**
-     * Contain the error message or messages
-     *
-     * @var string|array
-     */
-    private $messages;
-
-    /**
-     * @param string|array $messages
-     */
-    public function __construct($messages)
-    {
-        parent::__construct();
-
-        $this->messages = $messages;
-    }
-
-    /**
-     * Get the array or string message and return an array
-     *
-     * @return array
-     */
-    public function getArrayMessages()
-    {
-        return (array) $this->messages;
-    }
-
-    /**
-     * Get the HTTP error Code
-     *
-     * @return int
-     */
-    public function getHTTPCode()
-    {
-        return $this::HTTP_CODE;
-    }
+    const UNKNOWN = 0;
+    const PRESTASHOP_ORDER_NOT_FOUND = 2;
+    const PRESTASHOP_REFUND_ALREADY_SAVED = 3;
+    const PRESTASHOP_REFUND_TOTAL_AMOUNT_REACHED = 4;
+    const PRESTASHOP_ORDER_STATE_ERROR = 5;
+    const PRESTASHOP_CONTEXT_INVALID = 6;
+    const PRESTASHOP_PAYMENT_UNAVAILABLE = 7;
+    const PSACCOUNT_TOKEN_MISSING = 8;
+    const PSACCOUNT_REFRESH_TOKEN_MISSING = 9;
+    const PSCHECKOUT_LOCALE_DECODE_ERROR = 10;
+    const PSCHECKOUT_MERCHANT_IDENTIFIER_MISSING = 11;
+    const PSCHECKOUT_ORDER_MATRICE_ERROR = 12;
+    const PSCHECKOUT_WEBHOOK_HEADER_EMPTY = 13;
+    const PSCHECKOUT_WEBHOOK_SHOP_ID_EMPTY = 14;
+    const PSCHECKOUT_WEBHOOK_MERCHANT_ID_EMPTY = 15;
+    const PSCHECKOUT_WEBHOOK_PSX_ID_EMPTY = 16;
+    const PSCHECKOUT_WEBHOOK_BODY_EMPTY = 17;
+    const PSCHECKOUT_WEBHOOK_EVENT_TYPE_EMPTY = 18;
+    const PSCHECKOUT_WEBHOOK_CATEGORY_EMPTY = 19;
+    const PSCHECKOUT_WEBHOOK_RESOURCE_EMPTY = 20;
+    const PSCHECKOUT_WEBHOOK_AMOUNT_EMPTY = 21;
+    const PSCHECKOUT_WEBHOOK_AMOUNT_INVALID = 22;
+    const PSCHECKOUT_WEBHOOK_CURRENCY_EMPTY = 23;
+    const PSCHECKOUT_WEBHOOK_ORDER_ID_EMPTY = 24;
+    const PSCHECKOUT_WEBHOOK_PSL_SIGNATURE_INVALID = 25;
+    const PSCHECKOUT_WEBHOOK_SHOP_ID_INVALID = 26;
+    const PAYPAL_ORDER_IDENTIFIER_MISSING = 27;
+    const PAYPAL_PAYMENT_METHOD_MISSING = 28;
+    const PAYPAL_PAYMENT_CARD_ERROR = 29;
+    const PAYPAL_PAYMENT_CAPTURE_DECLINED = 30;
+    const PRESTASHOP_ORDER_ID_MISSING = 31;
+    const PSCHECKOUT_EXPRESS_CHECKOUT_BAD_TOKEN = 32;
+    const PSCHECKOUT_EXPRESS_CHECKOUT_CANNOT_SAVE_CUSTOMER = 33;
+    const PSCHECKOUT_EXPRESS_CHECKOUT_CANNOT_SAVE_ADDRESS = 34;
 }

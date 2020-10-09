@@ -1,4 +1,5 @@
-{**
+<?php
+/**
  * 2007-2020 PrestaShop and Contributors
  *
  * NOTICE OF LICENSE
@@ -15,14 +16,23 @@
  * @copyright 2007-2020 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
- *}
+ */
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
 
-{literal}
-<script type="text/javascript">
-  var paypalEmail = "{/literal}{$paypalEmail|escape:'javascript':'UTF-8'}{literal}";
-  var paypalLogoPath = "{/literal}{$paypalLogoPath|escape:'javascript':'UTF-8'}{literal}";
-  var expressCheckoutLabelPaymentOption = '{/literal}{l s='You have selected your %s PayPal account to proceed to the payment.' sprintf=[$paypalEmail] mod='ps_checkout'}{literal}';
-</script>
-{/literal}
+/**
+ * Update main function for module Version 1.5.0
+ *
+ * @param Ps_checkout $module
+ *
+ * @return bool
+ */
+function upgrade_module_1_5_0($module)
+{
+    if (empty(Currency::checkPaymentCurrencies($module->id))) {
+        return 'checkbox' === $module->currencies_mode ? $module->addCheckboxCurrencyRestrictionsForModule() : $module->addRadioCurrencyRestrictionsForModule();
+    }
 
-<script type='text/javascript' src='{$jsHideOtherPaymentOptions|escape:'javascript':'UTF-8'}'></script>
+    return true;
+}

@@ -17,15 +17,21 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  */
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
 
-namespace PrestaShop\Module\PrestashopCheckout;
-
-class UnprocessableException extends PsCheckoutException
+/**
+ * Update main function for module Version 1.5.2
+ *
+ * @param Ps_checkout $module
+ *
+ * @return bool
+ */
+function upgrade_module_1_5_2($module)
 {
-    /**
-     * Set the HTTP code returned
-     *
-     * @var int
-     */
-    const HTTP_CODE = 422;
+    // Check if all shops have a ShopUuid, if not generate it
+    $shopUuidManager = new PrestaShop\Module\PrestashopCheckout\ShopUuidManager();
+
+    return $shopUuidManager->generateForAllShops();
 }
